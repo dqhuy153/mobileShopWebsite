@@ -1,0 +1,483 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageKH.master.cs" Inherits="shopMobileOnline.KH.MasterPageKH" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DTH Store</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/fa/css/all.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="/CSS/admin.css">
+    <link href="https://fonts.googleapis.com/css?family=Wallpoet&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .top-head {
+            margin-top: 0;
+            width: 100%;
+            height: 20px;
+            align-items: flex-end;
+        }
+
+            .top-head ul {
+                justify-content: flex-end;
+                display: flex;
+                list-style: none;
+                margin-top: 10px;
+                margin-right: 15px;
+            }
+
+                .top-head ul li {
+                    color: #4b6584;
+                    font-size: 13px;
+                    font-weight: 400;
+                    padding-left: 13px;
+                    color: #2f3542;
+                }
+
+                    .top-head ul li:hover,
+                    .top-head ul li a:hover {
+                        color: #e77f67;
+                    }
+
+            .top-head li a {
+                text-decoration: none;
+                color: #2f3542;
+                display: flex;
+                align-items: center;
+            }
+
+                .top-head li a i {
+                    margin-top: 2px;
+                    margin-right: 7px;
+                    font-size: 15px;
+                }
+
+                .top-head li a span {
+                    display: block;
+                }
+
+        .top-body {
+            position: relative;
+            background-color: #2f3542;
+            margin-top: 10px;
+            width: 100%;
+            height: 70px;
+        }
+
+        .top-body-logo {
+            position: absolute;
+            width: 40%;
+            height: 100%;
+            margin-top: 13px;
+            margin-left: 50px;
+        }
+
+            .top-body-logo a {
+                color: #e77f67;
+                font-size: 33px;
+                font-weight: bold;
+                text-decoration: none;
+                font-family: sans-serif;
+            }
+
+        .top-body-right {
+            position: absolute;
+            margin-left: 930px;
+            height: 70px;
+            margin-top: 3px;
+        }
+
+            .top-body-right ul {
+                display: flex;
+                list-style: none;
+                margin-right: 0px;
+                margin-top: 20px;
+            }
+
+                .top-body-right ul li a {
+                    color: #e77f67;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 10px 11px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+
+                    .top-body-right ul li a:hover {
+                        background-color: #e77f67;
+                        color: whitesmoke;
+                        border-radius: 5px;
+                    }
+
+                    .top-body-right ul li a i {
+                        margin-right: 7px;
+                    }
+
+        .find {
+            position: absolute;
+            margin-left: 350px;
+            background-color: whitesmoke;
+            height: 50px;
+            border-radius: 3px;
+            width: 500px;
+            border-radius: 0;
+            margin-top: 10px;
+        }
+
+        .search-box {
+            border: none;
+            background-color: whitesmoke;
+            outline: none;
+            width: 440px;
+            margin-left: 10px;
+            height: 100%;
+        }
+
+        .find-icon {
+            background-color: whitesmoke;
+            color: #e77f67;
+            border: none;
+            float: right;
+            height: 100%;
+            width: 50px;
+        }
+
+            .find-icon i {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+
+            .find-icon:hover {
+                background-color: #e77f67;
+                color: whitesmoke;
+                border-radius: 0;
+                //border-radius: 20px;
+            }
+
+        .danhmucsp {
+            width: 100%;
+            height: 48px;
+            background-color: #e77f67;
+        }
+
+            .danhmucsp ul {
+                display: flex;
+                list-style: none;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+                .danhmucsp ul li {
+                    padding-top: 10px;
+                    display: block;
+                    text-align: center;
+                    width: 20%;
+                    height: 48px;
+                }
+
+                    .danhmucsp ul li a {
+                        text-decoration: none;
+                        color: white;
+                        font-size: 18px;
+                        width: 100%;
+                        height: 46px;
+                        display: block;
+                    }
+
+                    .danhmucsp ul li:hover {
+                        background-color: white;
+                        color: #e77f67;
+                        //border-radius: 10px;
+                    }
+
+                        .danhmucsp ul li:hover a {
+                            color: #e77f67;
+                        }
+
+        .lbSLGioHang {
+    display: inline-block;
+    position: absolute;
+    background: navajowhite;
+        right: 92px;
+    top: 37px;
+    padding: 0px;
+    border-radius: 50%;
+    width: 20px;
+    height: 30px;
+    height: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #e77f67;
+    font-weight: bold;
+}
+
+        .contact {
+            margin-top: 0px;
+            margin-left: 20px;
+        }
+
+            .contact ul {
+                display: flex;
+                list-style: none;
+                width: 30%;
+            }
+
+                .contact ul li {
+                    padding: 30px;
+                    width: 30%;
+                }
+
+                    .contact ul li a {
+                        font-size: 30px;
+                        color: #e77f67;
+                        transition: 0.5s;
+                    }
+
+                    .contact ul li i:hover {
+                        transform: scale(2.0);
+                    }
+
+        .footer {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            border-top: solid 1px #e77f67;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .footer-top h4 {
+                margin-bottom: 0;
+                margin-top: 0;
+                font-size: 15px;
+                color: #e77f67;
+            }
+
+        .footer-sdt {
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 30px;
+            text-align: left;
+        }
+
+        .copyright {
+            color: #fff;
+            background-color: #e77f67;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .login {
+            width: 100%;
+        }
+
+        .Table {
+            margin-left: 600px;
+        }
+
+            .Table h3 {
+                margin-left: 100px;
+                color: #e77f67;
+                font-weight: 500;
+            }
+
+            .Table h4 {
+                color: rebeccapurple;
+            }
+
+        .listsp {
+            background-color: blue;
+            width: 100%;
+            height: auto
+        }
+
+            .listsp h4 {
+                padding-left: 100px;
+                color: red;
+            }
+
+        .trangchu-htCuaHang {
+            width: 40%;
+            min-width: 500px;
+            margin: 50px auto;
+            box-shadow: rgba(0,0,0,0.1) 1px 1px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+            .trangchu-htCuaHang h4 {
+                display: block;
+                width: 100%;
+                background: #2f3542;
+                padding: 25px;
+                color: white;
+                margin: 0;
+                vertical-align: central;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .trangchu-htCuaHang ul {
+                padding: 30px 0;
+                font-weight: 500;
+                font-size: 14px;
+            }
+
+                .trangchu-htCuaHang ul li {
+                    margin: 5px;
+                }
+
+                .trangchu-htCuaHang ul i {
+                    margin-right: 10px;
+                    color: #e77f67;
+                }
+    </style>
+
+ 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="top-head">
+            <ul>
+                <li>
+                    <asp:HyperLink ID="hlDangNhap" runat="server" NavigateUrl="~/KH/KHDangNhap.aspx">Đăng nhập &nbsp;| </asp:HyperLink></li>
+                <li>
+                    <asp:LinkButton ID="lbDangXuat" runat="server" OnClick="lbDangXuat_Onclick">Đăng xuất &nbsp;| </asp:LinkButton></li>
+                <li><a href="../Admin/ADLogin.aspx"><i class="fas fa-user-cog" style="margin-right: 7px"></i>Admin site  &nbsp| </a></li>
+                <li>Tiếng Vệt  &nbsp|</li>
+                <li>EngLish  &nbsp|</li>
+                <li>
+                    <asp:HyperLink ID="hlUser" runat="server">
+                        <i class="far fa-user-circle"></i>
+                        <asp:Label ID="lbAccount" runat="server" Text="My Account"></asp:Label>
+                    </asp:HyperLink>
+                    
+                </li>
+            </ul>
+            <hr style="color: #4b6584">
+        </div>
+        <div class="top-body">
+            <div class="top-body-logo">
+                <a href="KHTrangChu.aspx"><i class="fas fa-mobile-alt"></i>DTH.COM</a>
+            </div>
+            <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch" >
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" class="find">
+                    <ContentTemplate >
+                        <asp:TextBox ID="txtTimKiem" runat="server" class="search-box" placeholder="Tìm kiếm sản phẩm"></asp:TextBox>
+                         <asp:LinkButton runat="server" ID="btnSearch" ToolTip="Search" CssClass="btn btn-primary find-icon" OnClick="btnSearch_Onclick" Text='<i class="fas fa-search"></i>' />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </asp:Panel>
+          
+            <div class="top-body-right">
+                <ul>
+                    <li><a href="KHTrangChu.aspx"><i class="fas fa-home"></i>Trang Chủ </a></li>
+                    <li><a href="#"><i class="fas fa-tag"></i>Khuyến Mãi </a></li>
+                    <li><a href="DonHang.aspx"><i class="fas fa-clipboard-list"></i>Đơn hàng </a></li>
+                    <li>
+                        <a href="GioHang.aspx">
+                            <i class="fas fa-shopping-cart"></i>Giỏ hàng
+                            
+                        </a>
+                        <asp:Label ID="lbSLGioHang" runat="server" Text="0" CssClass="lbSLGioHang"></asp:Label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="danhmucsp">
+            <ul>
+                <!--<li><a href="http://">Iphone</a></li>
+                <li><a href="http://">SamSung</a></li>
+                <li><a href="http://">Xiaomi</a></li>
+                <li><a href="http://">Oppo</a></li>
+                <li><a href="http://">ViVo</a></li>
+                -->
+                <asp:Repeater ID="rptNSX" runat="server">
+                    <ItemTemplate>
+                        <li><a href="TrangSPTheoNSX.aspx?idNSX=<%# Eval("ID_NSX") %>" class="nsx-<%# Eval("ID_NSX") %>"><%# Eval("TENNSX") %></a></li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <hr />
+        <section class="trangchu-htCuaHang">
+            <h4>Hệ thống cửa hàng DTH Store</h4>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i>03 Quang Trung, Hải Châu, Đà Nẵng</li>
+                <li><i class="fas fa-map-marker-alt"></i>222 Nguyễn Văn Linh, Hải Châu, Đà Nẵng</li>
+                <li><i class="fas fa-map-marker-alt"></i>607 - 609 Lê Hồng Phong, P. 10, Quận 10, HCM</li>
+                <li><i class="fas fa-map-marker-alt"></i>315 Đỗ Xuân Hợp, Phường Phước Long B, Quận 9</li>
+                <li><i class="fas fa-map-marker-alt"></i>97 Võ Văn Ngân, P. Linh Chiểu, Quận Thủ Đức, TP.HCM</li>
+            </ul>
+        </section>
+        <div class="footer">
+            <div class="footer-top">
+
+
+                <div class="contact">
+                    <ul>
+                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href="http://"><i class="fas fa-phone-alt"></i></a></li>
+                        <li><a href="mailto:nguyentiendat14@dtu.edu.vn"><i class="fas fa-envelope"></i></a></i></li>
+                    </ul>
+                </div>
+
+
+                <h4>CỬA HÀNG ĐIỆN THOẠI DTH</h4>
+                <div class="footer-sdt">
+                    <p>
+                        Gọi mua hàng 1800.1060 (7:30 - 22:00)
+                    <p>Gọi khiếu nại   1800.1062 (8:00 - 21:30)</p>
+                    <p>Gọi bảo hành   1800.1064 (8:00 - 21:00)</p>
+
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="text">
+                    Copyright by DTH - <a href="KHTrangChu.aspx" style="color: white">DTH.com</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

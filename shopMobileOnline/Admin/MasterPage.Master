@@ -1,0 +1,275 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="shopMobileOnline.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://img.icons8.com/dusk/64/000000/perfume-bottle.png" rel="icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script>
+        const btnMessage = document.getElementById("btn--message");
+        const messageBox = document.getElementById("massage-box");
+
+        btnMessage.addEventListener("click", () => {
+            messageBox.classList.toggle("visible");
+        })
+    </script>
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+        /*Begin: Reset css*/
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        * {
+            color: #333333;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        /*End: Reset css*/
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .invisible {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+
+        .header {
+            position: fixed;
+            display: flex;
+            background-color: #1b1b1b;
+            width: 100%;
+            top: 0px;
+            left: 0;
+            right: -48px;
+            height: 50px;
+            align-items: center;
+            z-index: 999;
+            justify-content: space-between;
+        }
+
+            .header a {
+                color: white
+            }
+
+        .header--logo {
+            float: right;
+            margin-left: 48px;
+        }
+
+        .header--logo__logo {
+            width: 240px;
+            padding: 8px 16px;
+        }
+
+        /*.header__items {
+            display: flex;
+            align-items: center;
+            padding: 0 48px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+            .header__items > p > a {
+                color: white;
+                font-size: 16px;
+                padding: 8px 16px;
+                text-transform: uppercase;
+            }
+            */
+            .header--info {
+                margin-right: 48px;
+                display: flex;
+            }
+            .header--info i{
+                color: white;
+                font-size: 15px;
+            }
+            .header--info span {
+                display:block;
+                color: white; 
+                margin-left: 7px;
+
+            }
+            .header--info button {
+                background: none;
+                cursor: pointer;
+                padding: 0 20px;
+                border: none;
+                box-shadow: none;
+                height: 50px;
+            }
+            .header--info button:hover {
+                background: #484848;
+            }
+            #btn--user{
+                display: flex;
+                align-items: center;
+            }
+            #massage-box {
+                position:absolute;
+                right: 197px;
+                border: 1px solid #dbdbdb;
+                padding: 10px 15px;
+                box-shadow: rgba(0,0,0,0.1) 1px 1px 5px;
+                font-size: 14px;
+            }
+
+        .body {
+            width: 100%;
+            margin: 85px 0;
+        }
+
+        /*.footer {
+            background-color: #000;
+            position: absolute;
+        }
+
+        footer__banner,
+        .footer__banner--center__logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .footer__banner--center__logo > img {
+                width: 100%;
+            }
+
+        .social-list, .copy-right {
+            color: white;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 8px;
+        }
+
+        .copy-right {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+            .copy-right a {
+                color: white;
+                font-family: 'Dancing Script', cursive;
+                padding-left: 8px;
+            }*/
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <div class="header--logo">
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/ADTrangChu.aspx">
+				<!--<img class="header--logo__logo" src="HinhAnh/logo.png" alt="logo" />-->
+                <h3 style="color: white; font-family: Arial,sans-serif;">DTH.</h3>
+                </asp:HyperLink>
+            </div>
+            <div class="header--info">
+                <div>
+                    <button id="btn--message">
+                        <i class="far fa-envelope"></i>
+                    </button>
+                    <div id="massage-box" class="invisible">
+                        <p>Không có tin nhắn mới</p>
+                    </div>
+                </div>
+                <button id="btn--alert">
+                    <i class="far fa-bell"></i>
+
+                </button>
+                <button id="btn--user">
+                    <i class="fas fa-user-circle img"></i>
+                    <asp:Label ID="Label1" runat="server" Text="admin"></asp:Label>
+                </button>
+            </div>
+            <!--<div class="header__items col-">
+			<asp:Repeater ID="rptMenu" runat="server">
+                <ItemTemplate>
+                    <p >
+                        <a  href="TrangDanhSachSP.aspx?idNSX=<%# Eval("ID_NSX") %>">
+                            <%# Eval("TENNSX") %>
+                        </a>
+                    </p>
+                </ItemTemplate>
+            </asp:Repeater>
+         </div>
+         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/QLSanPham.aspx">QL Sản phẩm</asp:HyperLink>
+        -->
+        </div>
+        <div class="body">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--<div class="footer">
+        <div class="footer__banner">
+           <div class="footer__banner--center__logo">
+              <img src="HinhAnh/footer2.jpg" alt="logo" />
+            </div>
+			<div class="social-list">
+				<p class="copy-right">Powered by
+					<a href="#">me.</a>
+				</p> 
+			</div>
+        </div>
+		
+    </div>-->
+    </form>
+</body>
+</html>
