@@ -13,6 +13,12 @@ namespace shopMobileOnline.KH
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //check xem nguoi dung co dang trong phien dang nhap
+            if (Session["userKH"] == null)
+            {
+                Response.Redirect("KHDangNhap.aspx");
+            }
+
             if (!IsPostBack)
             {
                 if (Request.QueryString.Get("idDH") != null)
@@ -64,14 +70,15 @@ namespace shopMobileOnline.KH
                 DataAccess dataAccess = new DataAccess();
                 dataAccess.MoKetNoiCSDL();
 
-                string sql = "UPDATE DONHANG SET TRANGTHAI = 0 WHERE ID_DONHANG = " + idDH;
+                SqlCommand cmd = new SqlCommand("HUY_DONHANG", dataAccess.getConnection());
 
-                SqlCommand cmd = new SqlCommand(sql, dataAccess.getConnection());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID_DONHANG", int.Parse(idDH));
 
                 cmd.ExecuteNonQuery();
 
-                Response.Redirect("DonHang.aspx");
                 dataAccess.DongKetNoiCSDL();
+                Response.Redirect("DonHang.aspx");
             }
 
         }

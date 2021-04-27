@@ -1,4 +1,4 @@
-﻿<%@ Page EnableEventValidation="false" Title="" Language="C#" MasterPageFile="~/KH/MasterPageKH.Master" AutoEventWireup="true" CodeBehind="GioHang.aspx.cs" Inherits="shopMobileOnline.admin.GioHang" %>
+﻿<%@ Page EnableEventValidation="false" ValidateRequest="false" Title="" Language="C#" MasterPageFile="~/KH/MasterPageKH.Master" AutoEventWireup="true" CodeBehind="GioHang.aspx.cs" Inherits="shopMobileOnline.admin.GioHang" %>
 
 <%@ MasterType VirtualPath="~/KH/MasterPageKH.Master" %>
 
@@ -18,42 +18,38 @@
         }
 
         .head-text {
-            //position: absolute;
+         
             width: 630px;
-            //padding-left: 400px;
+           
             padding-top: 20px;
             display: flex;
             justify-content: space-between;
         }
 
         .text {
-            //position: relative;
+         
             width: 100%;
             display: flex;
             justify-content: space-between;
         }
 
         .back {
-            //position: absolute;
+            
             margin-right: 50px;
         }
 
-        .text p {
-            //position: absolute;
-            //padding-left: 520px;
-        }
+    
 
         .cart {
-            //position: absolute;
+      
             width: 650px;
             box-shadow: 0 0 18px rgb(0 0 0 / 12%);
             margin-top: 30px;
-            //margin-left: 400px;
-            //height: 800px;
+        
         }
 
         .table {
-            //position: relative;
+          
             width: 620px;
             height: 800px;
         }
@@ -64,7 +60,7 @@
 
         .left, .left1 {
             height: auto;
-            //position: relative;
+          
             width: 500px;
             
         }
@@ -73,15 +69,13 @@
             padding-top: 10px;
         }
         .img-sp {
-            //position: absolute;
+   
             width: 80px;
             margin-right: 10px;
         }
 
         .btnXoa {
-            //position: absolute;
-            //top: 97px;
-            //left: 41px;
+        
             border: none;
             cursor: pointer;
             background: none;
@@ -95,17 +89,9 @@
                 font-size: 15px;
             }
 
-        .left h5 {
-            //position: absolute;
-            //margin-left: 85px;
-            //margin-top: 10px;
-
-        }
+        
 
         .left p {
-            //position: absolute;
-            //margin-left: 85px;
-            //margin-top: 35px;
             font-size: 13px;
         }
 
@@ -304,6 +290,54 @@
             color: tomato;
             display: block;
         }
+        .trTT {
+            border-bottom: 1px solid #eee;
+        }
+        .trTT h6 {
+            margin: 25px 0;
+        }
+
+        .trThanhToan img {
+            width: 25px;
+        }
+        .trThanhToan-td {
+             display: flex;
+             width: 509px;
+             border: none;
+             flex-direction: column;
+            
+
+        }
+        .trThanhToan h6 {
+            padding: 25px 0;
+            
+        }
+        .rbl-container tr td{
+            display: flex;
+            flex-direction: row;
+            border: none;
+
+        }
+        .rbl-container tr td input {
+            width: 40px;
+            height:17px;
+            padding-top: 5px;
+            display:block;
+            margin-top: 3px;
+        }
+        .trThanhToan td label {
+            display: flex;
+            align-items: center;
+            padding-bottom: 5px;
+        } 
+        .trThanhToan td label i {
+            font-size: 20px;
+        }
+        .trThanhToan td label p {
+            margin-left: 10px;
+        }
+
+
         .txterror {
             color: tomato;
             display: block;
@@ -324,6 +358,9 @@
             font-size: 30px;
             margin: 20px;
             color: tomato
+        }
+        .lbID {
+            display: none;
         }
     </style>
 </asp:Content>
@@ -347,9 +384,10 @@
                                         <div class="left-head">
                                             <h5><%# Eval("Ten") %></h5>
                                             <p>Thông tin khuyến mãi</p>
+                                            <asp:Label ID="lbID" runat="server" Text="" CssClass="lbID"></asp:Label>
                                         </div>
                                     </a>
-                                    <asp:LinkButton ID="btnXoaItem" runat="server" CssClass="btnXoa" OnClick="btnXoaItem_Click"><i class="far fa-times-circle"></i></asp:LinkButton>
+                                    <asp:LinkButton ID="btnXoaItem" runat="server" CssClass="btnXoa" OnClick="btnXoaItem_Click" CausesValidation="false"><i class="far fa-times-circle"></i></asp:LinkButton>
                                 </td>
                                 <td class="right">
                                     <p><%# Eval("Gia","{0:n0}") %></p>
@@ -380,7 +418,7 @@
                     </tr>
 
 
-                    <tr id="trTT" class="table-row3" runat="server">
+                    <tr id="trTT" class="trTT" runat="server">
                         <td colspan="2">
                             <h6>THÔNG TIN KHÁCH HÀNG</h6>
                             <div class="ttkh-table-container">
@@ -424,6 +462,46 @@
                             </div>
                         </td>
                     </tr>
+                    <tr id="trThanhToan" class="trThanhToan" runat="server">
+                        
+                        <td colspan="2" class="trThanhToan-td">
+                            <h6>PHƯƠNG THỨC THANH TOÁN</h6>
+                            <asp:RadioButtonList ID="rblThanhToan" runat="server" CssClass="rbl-container">
+                                <asp:ListItem Selected="True">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <p>
+                                        Thanh toán bằng tiền mặt
+                                    </p>
+                                </asp:ListItem>
+                                <asp:ListItem>
+                                    <i class="fab fa-cc-visa"></i>
+                                    <p>
+                                        Thanh toán bằng thẻ quốc tế Visa, Master, JCB
+                                    </p>
+                                </asp:ListItem>
+                                <asp:ListItem>
+                                    <i class="fas fa-money-check-alt"></i>
+                                    <p>
+                                        Thanh toán bằng thẻ nội địa
+                                    </p>
+                                </asp:ListItem>
+                                <asp:ListItem>
+                                    <img src="../images/momo.png" alt="momo logo" />
+                                    <p>
+                                        Thanh toán bằng MoMo
+                                    </p>
+                                </asp:ListItem>
+                                <asp:ListItem>
+                                    <img src="../images/zalopay.png" alt="momo logo" />
+                                    <p>
+                                        Thanh toán bằng ZaloPay
+                                    </p>
+                                </asp:ListItem>
+
+                            </asp:RadioButtonList>                            
+                        </td>
+                      
+                    </tr>
                     <tr id="trTong" class="table-row4" runat="server">
                         <td class="left2">
                             <h5 style="">Tổng tiền:</h5>
@@ -435,12 +513,9 @@
                     <tr id="trMua" class="table-row4" runat="server">
                         <td colspan="2">
                             <asp:Button ID="btnMua" runat="server" Text="Thanh toán và mua hàng" OnClick="btnMua_Click" CssClass="btnDatHang" />
-                            <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="~/KH/KHDangNhap.aspx" CssClass="btnLogin">Đăng nhập để tiếp tục</asp:HyperLink>
-
+                            <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="~/KH/KHDangNhap.aspx?t=GH" CssClass="btnLogin">Đăng nhập để tiếp tục</asp:HyperLink>
                         </td>
                     </tr>
-                    
-                        
                     
                 </table>
                  </div>

@@ -104,10 +104,12 @@
             }
 
         .top-body-right {
-            position: absolute;
-            margin-left: 930px;
+            //position: absolute;
+            //margin-left: 930px;
             height: 70px;
-            margin-top: 3px;
+            padding-top: 3px;
+            float: right;
+            margin-right: 5px;
         }
 
             .top-body-right ul {
@@ -121,7 +123,7 @@
                     color: #e77f67;
                     font-size: 14px;
                     font-weight: 600;
-                    padding: 10px 11px;
+                    padding: 10px 11.5px;
                     text-decoration: none;
                     text-transform: uppercase;
                 }
@@ -177,6 +179,20 @@
                 //border-radius: 20px;
             }
 
+        @media screen and (max-width: 1200px) {
+            .search-box{
+                display: none;
+            }
+                .find-icon{
+                    display: none;
+                }
+                #txtTimKiem {
+                    display: none;
+                }
+                .find{
+                    display: none;
+                }
+        }
         .danhmucsp {
             width: 100%;
             height: 48px;
@@ -218,21 +234,21 @@
                         }
 
         .lbSLGioHang {
-    display: inline-block;
-    position: absolute;
-    background: navajowhite;
-        right: 92px;
-    top: 37px;
-    padding: 0px;
-    border-radius: 50%;
-    width: 20px;
-    height: 30px;
-    height: 20px;
-    text-align: center;
-    font-size: 13px;
-    color: #e77f67;
-    font-weight: bold;
-}
+            display: inline-block;
+            position: absolute;
+            background: navajowhite;
+            right: 97px;
+            top: 38px;
+            padding: 0px;
+            border-radius: 50%;
+            width: 20px;
+            height: 30px;
+            height: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #e77f67;
+            font-weight: bold;
+        }
 
         .contact {
             margin-top: 0px;
@@ -363,7 +379,7 @@
                 }
     </style>
 
- 
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -383,7 +399,7 @@
                         <i class="far fa-user-circle"></i>
                         <asp:Label ID="lbAccount" runat="server" Text="My Account"></asp:Label>
                     </asp:HyperLink>
-                    
+
                 </li>
             </ul>
             <hr style="color: #4b6584">
@@ -392,17 +408,17 @@
             <div class="top-body-logo">
                 <a href="KHTrangChu.aspx"><i class="fas fa-mobile-alt"></i>DTH.COM</a>
             </div>
-            <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch" >
+            <asp:Panel ID="Panel1" runat="server" DefaultButton="btnSearch">
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
                 </asp:ScriptManager>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" class="find">
-                    <ContentTemplate >
+                    <ContentTemplate>
                         <asp:TextBox ID="txtTimKiem" runat="server" class="search-box" placeholder="Tìm kiếm sản phẩm"></asp:TextBox>
-                         <asp:LinkButton runat="server" ID="btnSearch" ToolTip="Search" CssClass="btn btn-primary find-icon" OnClick="btnSearch_Onclick" Text='<i class="fas fa-search"></i>' />
+                        <asp:LinkButton runat="server" ID="btnSearch" ToolTip="Search" CssClass="btn btn-primary find-icon" OnClick="btnSearch_Onclick" Text='<i class="fas fa-search"></i>' />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </asp:Panel>
-          
+
             <div class="top-body-right">
                 <ul>
                     <li><a href="KHTrangChu.aspx"><i class="fas fa-home"></i>Trang Chủ </a></li>

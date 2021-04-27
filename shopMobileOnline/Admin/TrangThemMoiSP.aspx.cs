@@ -93,7 +93,7 @@ namespace shopMobileOnline.Admin
             }
             catch
             {
-                Response.Write("<script>alert('Đã xảy ra lỗi. Vui lòng thực hiện lại')</script>");
+                Response.Write("<script>alert('Bạn chưa upload hình cho sản phẩm. Vui lòng thực hiện lại')</script>");
                 dataAccess.DongKetNoiCSDL();
             }
         }

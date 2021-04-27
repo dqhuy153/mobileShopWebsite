@@ -44,19 +44,21 @@ namespace shopMobileOnline.Admin
                         {
                             
                             lbDaGiao.Style.Add("display", "none");
-                            
+                            btnDuyetSangCho.Style.Add("display", "none");
                             btnHuy.Style.Add("display", "none");
+                            btnDuyet.Style.Add("display", "none");
                         }
                         else if (trangThai == 1)
                         {
-                            btnCho.Style.Add("display", "none");
+                            btnHuySangCho.Style.Add("display", "none");
                             lbDaGiao.Style.Add("display", "none");
+                            btnDuyetSangCho.Style.Add("display", "none");
                         }
                         else if (trangThai == 2)
                         {
                             btnDuyet.Style.Add("display", "none");
                             btnHuy.Style.Add("display", "none");
-                            btnCho.Style.Add("display", "none");
+                            btnHuySangCho.Style.Add("display", "none");
                         }
                     }
 
@@ -75,7 +77,7 @@ namespace shopMobileOnline.Admin
                 }
             }
         }
-        protected void btnHuy_Click(object sender, EventArgs e)
+        protected void btnChoSangHuy_Click(object sender, EventArgs e)
         {
             if (Request.QueryString.Get("idDH") != null && Request.QueryString.Get("t")!= null)
             {
@@ -84,11 +86,13 @@ namespace shopMobileOnline.Admin
                 DataAccess dataAccess = new DataAccess();
                 dataAccess.MoKetNoiCSDL();
 
-                string sql = "UPDATE DONHANG SET TRANGTHAI = 0 WHERE ID_DONHANG = " + idDH;
+                SqlCommand cmd = new SqlCommand("HUY_DONHANG", dataAccess.getConnection());
 
-                SqlCommand cmd = new SqlCommand(sql, dataAccess.getConnection());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID_DONHANG", int.Parse(idDH));
 
                 cmd.ExecuteNonQuery();
+      
 
                 dataAccess.DongKetNoiCSDL();
                 if (trangTruoc == 0)
@@ -112,7 +116,7 @@ namespace shopMobileOnline.Admin
 
         }
 
-        protected void btnCho_Click(object sender, EventArgs e)
+        protected void btnHuySangCho_Click(object sender, EventArgs e)
         {
             if (Request.QueryString.Get("idDH") != null && Request.QueryString.Get("t") != null)
             {
@@ -121,9 +125,10 @@ namespace shopMobileOnline.Admin
                 DataAccess dataAccess = new DataAccess();
                 dataAccess.MoKetNoiCSDL();
 
-                string sql = "UPDATE DONHANG SET TRANGTHAI = 1 WHERE ID_DONHANG = " + idDH;
+                SqlCommand cmd = new SqlCommand("HUY_SANG_CHODUYET_DONHANG", dataAccess.getConnection());
 
-                SqlCommand cmd = new SqlCommand(sql, dataAccess.getConnection());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID_DONHANG", int.Parse(idDH));
 
                 cmd.ExecuteNonQuery();
 
@@ -148,7 +153,7 @@ namespace shopMobileOnline.Admin
             }
         }
 
-        protected void btnDuyet_Click(object sender, EventArgs e)
+        protected void btnChoSangDuyet_Click(object sender, EventArgs e)
         {
             if (Request.QueryString.Get("idDH") != null && Request.QueryString.Get("t") != null)
             {
@@ -161,6 +166,41 @@ namespace shopMobileOnline.Admin
 
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ID_DONHANG", int.Parse(idDH));
+
+                cmd.ExecuteNonQuery();
+
+                dataAccess.DongKetNoiCSDL();
+                if (trangTruoc == 0)
+                {
+                    Response.Redirect("DonHangDaHuy.aspx");
+
+                }
+                if (trangTruoc == 1)
+                {
+                    Response.Redirect("DonHangChoDuyet.aspx");
+                }
+                if (trangTruoc == 2)
+                {
+                    Response.Redirect("DonHangThanhCong.aspx");
+                }
+                if (trangTruoc == 3)
+                {
+                    Response.Redirect("ADTrangChu.aspx");
+                }
+            }
+        }
+        protected void btnDuyetSangCho_Click(object sender, EventArgs e)
+        {
+            if (Request.QueryString.Get("idDH") != null && Request.QueryString.Get("t") != null)
+            {
+                int trangTruoc = int.Parse(Request.QueryString.Get("t"));
+                string idDH = Request.QueryString.Get("idDH");
+                DataAccess dataAccess = new DataAccess();
+                dataAccess.MoKetNoiCSDL();
+
+                string sql = "UPDATE DONHANG SET TRANGTHAI = 1 WHERE ID_DONHANG =" + idDH;
+
+                SqlCommand cmd = new SqlCommand(sql, dataAccess.getConnection());
 
                 cmd.ExecuteNonQuery();
 

@@ -14,7 +14,7 @@ namespace shopMobileOnline.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
                 HttpContext.Current.Response.Cache.SetNoServerCaching();
@@ -25,132 +25,102 @@ namespace shopMobileOnline.admin
 
                     //an trang gio hang trong
                     pnGioHangTrong.Style.Add("display", "none");
-                    
-            
+
+                    foreach(RepeaterItem item in rptSP.Items)
+                    {
+                        LinkButton btnXoaItem = (LinkButton)item.FindControl("btnXoaItem");
+                        btnXoaItem.Click += new EventHandler(btnXoaItem_Click);
+                    }
+
                     DataTable cart = Session["cart"] as DataTable;
 
-                    //du lieu KH
-                    //neu kh da dang nhap
-                    if (Session["userKH"] != null)
+                    if (cart != null && cart.Rows.Count > 0)
                     {
-                        //hien thi nut mua hang neu kh da dang nhap, an nut login
-                        //trMua.Style.Add("display", "none");
-                        hlLogin.Style.Add("display", "none");
+                        this.rptSP.DataSource = cart;
+                        this.rptSP.DataBind();
 
-                        string usernameKH = Session["userKH"].ToString();
-           
+                        int tongTien = 0;
 
-                        DataAccess dataAccess = new DataAccess();
-                        dataAccess.MoKetNoiCSDL();
-
-                        string sql = "SELECT * FROM TAIKHOAN, LOAITK WHERE TAIKHOAN.ID_LOAITK = LOAITK.ID_LOAITK AND TENDANGNHAP = N'" + usernameKH + "'";
-                        DataTable dt = dataAccess.LayBangDuLieu(sql);
-
-                        if (dt != null && dt.Rows.Count > 0)
+                        foreach (DataRow dr in cart.Rows)
                         {
-                            txtTen.Text = dt.Rows[0]["HOTEN"].ToString();
-                            //txtMatKhauCu.Text = dt.Rows[0]["MATKHAU"].ToString();
-                            txtEmail.Text = dt.Rows[0]["EMAIL"].ToString();
-                            txtDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
-                            txtSDT.Text = dt.Rows[0]["SDT"].ToString();
-                        }
-
-                        if (cart != null && cart.Rows.Count > 0)
-                        {
-                            this.rptSP.DataSource = cart;
-                            this.rptSP.DataBind();
-
-                            int tongTien = 0;
-
-                            StringBuilder sb = new StringBuilder();
-
-                            foreach (DataRow dr in cart.Rows)
+                            foreach (RepeaterItem item in rptSP.Items)
                             {
-                                foreach (RepeaterItem item in rptSP.Items)
+                                Label lbSL = (Label)item.FindControl("lbSL");
+                                Label lbID = (Label)item.FindControl("lbID");
+
+                                if (!String.IsNullOrEmpty(lbSL.Text))
                                 {
-                                    Label lbSL = (Label)item.FindControl("lbSL");
-                                    if (!String.IsNullOrEmpty(lbSL.Text))
-                                    {
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        lbSL.Text = "x " + dr["SoLuong"].ToString();
-
-                                    }
+                                    continue;
                                 }
-
-                                tongTien += (int.Parse(dr["Gia"].ToString()) * int.Parse(dr["SoLuong"].ToString()));
-
+                                else
+                                {
+                                    lbSL.Text = "x " + dr["SoLuong"].ToString();
+                                    lbID.Text = dr["ID"].ToString();
+                                    break;
+                                }
                             }
 
-                            lblTamTinh.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
-                            lblTong.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
-                            lbTong1.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
-
-
-                            //Ket noi string html vao trang asp
-                           
+                            tongTien += (int.Parse(dr["Gia"].ToString()) * int.Parse(dr["SoLuong"].ToString()));
                         }
 
-                    }
-                    else
-                    {
-                        //lbThongBao.Text = "Bạn phải đăng nhập để tiến hành thanh toán";
-                        trTT.Style.Add("display", "none");
-                        trTong.Style.Add("display", "none");
-                        btnMua.Style.Add("display", "none");
+                        lblTamTinh.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
+                        lblTong.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
+                        lbTong1.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
 
-                        if (cart != null && cart.Rows.Count > 0)
+
+                        //du lieu KH
+                        //neu kh da dang nhap
+                        if (Session["userKH"] != null)
                         {
-                            this.rptSP.DataSource = cart;
-                            this.rptSP.DataBind();
+                            //hien thi nut mua hang neu kh da dang nhap, an nut login
+                            //trMua.Style.Add("display", "none");
+                            hlLogin.Style.Add("display", "none");
 
-                            
-                            int tongTien = 0;
+                            string usernameKH = Session["userKH"].ToString();
 
-                            foreach (DataRow dr in cart.Rows)
+
+                            DataAccess dataAccess = new DataAccess();
+                            dataAccess.MoKetNoiCSDL();
+
+                            string sql = "SELECT * FROM TAIKHOAN, LOAITK WHERE TAIKHOAN.ID_LOAITK = LOAITK.ID_LOAITK AND TENDANGNHAP = N'" + usernameKH + "'";
+                            DataTable dt = dataAccess.LayBangDuLieu(sql);
+
+                            if (dt != null && dt.Rows.Count > 0)
                             {
-
-                                foreach (RepeaterItem item in rptSP.Items)
-                                {
-                                    Label lbSL = (Label)item.FindControl("lbSL");
-                                    if (!String.IsNullOrEmpty(lbSL.Text))
-                                    {
-                                        continue;
-                                    }
-                                    else
-                                    {
-                                        lbSL.Text = "x " + dr["SoLuong"].ToString();
-                                        break;
-                                    }
-                                }
-
-                                tongTien += (int.Parse(dr["Gia"].ToString()) * int.Parse(dr["SoLuong"].ToString()));
-                                
-                                    
-                                
+                                txtTen.Text = dt.Rows[0]["HOTEN"].ToString();
+                                //txtMatKhauCu.Text = dt.Rows[0]["MATKHAU"].ToString();
+                                txtEmail.Text = dt.Rows[0]["EMAIL"].ToString();
+                                txtDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
+                                txtSDT.Text = dt.Rows[0]["SDT"].ToString();
+                                //Ket noi string html vao trang asp
+                                dataAccess.DongKetNoiCSDL();
                             }
-
-                            lblTamTinh.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString())); 
-                            lblTong.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
-
-                            //Ket noi string html vao trang asp
                             
                         }
+                        //neu kh chua dang nhap
+                        else
+                        {
+                            //lbThongBao.Text = "Bạn phải đăng nhập để tiến hành thanh toán";
+                            trTT.Style.Add("display", "none");
+                            trThanhToan.Style.Add("display", "none");
+                            trTong.Style.Add("display", "none");
+                            btnMua.Style.Add("display", "none");
+                        }
                     }
-
-
+                    else //neu ko co san pham trong gio hang
+                    {
+                        //an trang gio hang
+                        pnGioHang.Style.Add("display", "none");
+                    }
                 }
                 else //neu ko co san pham trong gio hang
                 {
                     //an trang gio hang
                     pnGioHang.Style.Add("display", "none");
-                    
                 }
             }
         }
-
+        
         protected void btnMua_Click(object sender, EventArgs e)
         {
             if (Session["userKH"] != null)
@@ -180,8 +150,6 @@ namespace shopMobileOnline.admin
                     //an trang gio hang trong
                     DataTable cart = Session["cart"] as DataTable;
 
-                    
-
                     if(cart != null && cart.Rows.Count > 0)
                     {
                         foreach(DataRow dr in cart.Rows)
@@ -201,19 +169,77 @@ namespace shopMobileOnline.admin
 
                                 dataAccess.DongKetNoiCSDL();
                             }
-                            
                         }
                     }
                  }
+                Session["cart"] = null;
 
                 Response.Redirect("DonHang.aspx");
             }
             
         }
+    
 
         protected void btnXoaItem_Click(object sender, EventArgs e)
         {
+            //Find the button control
+            LinkButton btn = (LinkButton)sender;
+            //Get the repeater selected row
+            RepeaterItem ritem = (RepeaterItem)btn.NamingContainer;
 
+            //get idSP
+            Label lbId = (Label)ritem.FindControl("lbID");
+            string idSP = lbId.Text;
+
+            //delete row contain that id
+            DataTable cart = Session["cart"] as DataTable;
+            foreach(DataRow dr in cart.Rows)
+            {
+                if(dr["ID"].ToString() == idSP)
+                {
+                    dr.Delete();
+                    break;
+                }
+            }
+
+            //update session cart
+            Session["cart"] = cart;
+
+            this.rptSP.DataSource = cart;
+            this.rptSP.DataBind();
+
+            int tongTien = 0;
+
+            foreach (DataRow dr in cart.Rows)
+            {
+                foreach (RepeaterItem item in rptSP.Items)
+                {
+                    Label lbSL = (Label)item.FindControl("lbSL");
+                    Label lbID = (Label)item.FindControl("lbID");
+
+                    if (!String.IsNullOrEmpty(lbSL.Text))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        lbSL.Text = "x " + dr["SoLuong"].ToString();
+                        lbID.Text = dr["ID"].ToString();
+                        break;
+                    }
+                }
+                tongTien += (int.Parse(dr["Gia"].ToString()) * int.Parse(dr["SoLuong"].ToString()));
+            }
+
+            lblTamTinh.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
+            lblTong.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
+            lbTong1.Text = String.Format("{0:n0}", int.Parse(tongTien.ToString()));
+
+            if(int.Parse(tongTien.ToString()) == 0)
+            {
+                pnGioHang.Style.Add("display", "none");
+                pnGioHangTrong.Style.Add("display", "block");
+            }
         }
     }
 }

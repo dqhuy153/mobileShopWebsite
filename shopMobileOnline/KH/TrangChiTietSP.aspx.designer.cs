@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace shopMobileOnline.admin {
-    
-    
-    public partial class TrangChiTietSP {
-        
+namespace shopMobileOnline.admin
+{
+
+
+    public partial class TrangChiTietSP
+    {
+
         /// <summary>
         /// imgSP control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgSP;
-        
+
         /// <summary>
         /// lbTenSP control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbTenSP;
-        
+
         /// <summary>
         /// txtSL control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSL;
-        
+
         /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// CompareValidator1 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
-        
+
         /// <summary>
         /// btnDatHang control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDatHang;
-        
+
         /// <summary>
         /// btnLuu control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLuu;
-        
+
         /// <summary>
         /// lbTen1 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbTen1;
-        
+
         /// <summary>
         /// lbNSX control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbNSX;
-        
+
         /// <summary>
         /// lbLoai control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbLoai;
-        
+
         /// <summary>
         /// lbSL control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbSL;
-        
+
         /// <summary>
         /// lbGia control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbGia;
-        
+
         /// <summary>
         /// lbManHinh control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbManHinh;
-        
+
         /// <summary>
         /// lbCamSau control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCamSau;
-        
+
         /// <summary>
         /// lbCamTruoc control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCamTruoc;
-        
+
         /// <summary>
         /// lbCPU control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbCPU;
-        
+
         /// <summary>
         /// lbBoNho control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbBoNho;
-        
+
         /// <summary>
         /// lbKetNoi control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbKetNoi;
-        
+
         /// <summary>
         /// lbPin control.
         /// </summary>
@@ -182,15 +184,53 @@ namespace shopMobileOnline.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbPin;
-        
+
+        /// <summary>
+        /// rptDanhGia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptDanhGia;
+
+        /// <summary>
+        /// txtBL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBL;
+
+        /// <summary>
+        /// lbtnBL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnBL;
+
+        /// <summary>
+        /// rptBinhLuan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptBinhLuan;
+
         /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new shopMobileOnline.KH.MasterPageKH Master {
-            get {
+        public new shopMobileOnline.KH.MasterPageKH Master
+        {
+            get
+            {
                 return ((shopMobileOnline.KH.MasterPageKH)(base.Master));
             }
         }

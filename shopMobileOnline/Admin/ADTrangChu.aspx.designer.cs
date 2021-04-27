@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace shopMobileOnline.Admin {
-    
-    
-    public partial class ADTrangChu {
-        
+namespace shopMobileOnline.Admin
+{
+
+
+    public partial class ADTrangChu
+    {
+
         /// <summary>
         /// Panel1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace shopMobileOnline.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
-        
+
         /// <summary>
         /// lbTongDoanhThu control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace shopMobileOnline.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbTongDoanhThu;
-        
+
         /// <summary>
         /// lbSPDaBan control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace shopMobileOnline.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbSPDaBan;
-        
+
         /// <summary>
         /// lbSPTon control.
         /// </summary>
@@ -47,42 +49,17 @@ namespace shopMobileOnline.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbSPTon;
-        
-        /// <summary>
-        /// HyperLink1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
-        
-        /// <summary>
-        /// HyperLink2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
-        
-        /// <summary>
-        /// HyperLink3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
-        
+
         /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new shopMobileOnline.Admin.MasterPageAD Master {
-            get {
+        public new shopMobileOnline.Admin.MasterPageAD Master
+        {
+            get
+            {
                 return ((shopMobileOnline.Admin.MasterPageAD)(base.Master));
             }
         }

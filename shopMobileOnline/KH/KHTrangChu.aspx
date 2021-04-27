@@ -237,17 +237,6 @@
         </asp:Repeater>
     </div>
         <button id="btn-xemThem">Xem thêm</button>
-        <!--<hr />
-    <section class="trangchu-htCuaHang">
-        <h4>Hệ thống cửa hàng DTH Store</h4>
-        <ul>
-           <li><i class="fas fa-map-marker-alt"></i> 03 Quang Trung, Hải Châu, Đà Nẵng</li>
-            <li><i class="fas fa-map-marker-alt"></i> 222 Nguyễn Văn Linh, Hải Châu, Đà Nẵng</li> 
-            <li><i class="fas fa-map-marker-alt"></i> 607 - 609 Lê Hồng Phong, P. 10, Quận 10, HCM</li> 
-            <li><i class="fas fa-map-marker-alt"></i> 315 Đỗ Xuân Hợp, Phường Phước Long B, Quận 9</li> 
-            <li><i class="fas fa-map-marker-alt"></i> 97 Võ Văn Ngân, P. Linh Chiểu, Quận Thủ Đức, TP.HCM</li> 
-        </ul>
-    </section>
-            -->
+
     </div>
 </asp:Content>

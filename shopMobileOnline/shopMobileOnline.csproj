@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,21 +95,27 @@
     <Content Include="fa\css\svg-with-js.min.css" />
     <Content Include="fa\css\v4-shims.css" />
     <Content Include="fa\css\v4-shims.min.css" />
+    <Content Include="fa\dist\css\image-zoom.css" />
+    <Content Include="fa\dist\js\image-zoom.js" />
+    <Content Include="fa\dist\js\image-zoom.min.js" />
     <Content Include="fa\webfonts\fa-brands-400.svg" />
     <Content Include="fa\webfonts\fa-regular-400.svg" />
     <Content Include="fa\webfonts\fa-solid-900.svg" />
     <Content Include="images\avatar.png" />
     <Content Include="images\banner1.jpg" />
-    <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
     <Content Include="images\bannerqc.png" />
     <Content Include="images\ipbanner.jpg" />
+    <Content Include="images\momo.png" />
     <Content Include="images\userIcon.png" />
+    <Content Include="images\zalopay.png" />
     <Content Include="KH\ChiTietDonHang.aspx" />
     <Content Include="KH\DonHang.aspx" />
+    <Content Include="KH\DonHangThanhCong.aspx" />
     <Content Include="KH\KHDangKi.aspx" />
     <Content Include="KH\GioHang.aspx" />
     <Content Include="KH\KHDangNhap.aspx" />
+    <Content Include="KH\KHDanhGia.aspx" />
     <Content Include="KH\KHTimKiem.aspx" />
     <Content Include="KH\ThemGioHangThanhCong.aspx" />
     <Content Include="KH\ThongTinTaiKhoan.aspx" />
@@ -243,7 +250,6 @@
     <Compile Include="Admin\QLTaiKhoanKH.aspx.designer.cs">
       <DependentUpon>QLTaiKhoanKH.aspx</DependentUpon>
     </Compile>
-    <Content Include="Class1.txt" />
     <Compile Include="Admin\test.Master.cs">
       <DependentUpon>test.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +299,13 @@
     <Compile Include="KH\DonHang.aspx.designer.cs">
       <DependentUpon>DonHang.aspx</DependentUpon>
     </Compile>
+    <Compile Include="KH\DonHangThanhCong.aspx.cs">
+      <DependentUpon>DonHangThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\DonHangThanhCong.aspx.designer.cs">
+      <DependentUpon>DonHangThanhCong.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KH\KHDangKi.aspx.cs">
       <DependentUpon>KHDangKi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -313,6 +326,13 @@
     </Compile>
     <Compile Include="KH\KHDangNhap.aspx.designer.cs">
       <DependentUpon>KHDangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KH\KHDanhGia.aspx.cs">
+      <DependentUpon>KHDanhGia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KH\KHDanhGia.aspx.designer.cs">
+      <DependentUpon>KHDanhGia.aspx</DependentUpon>
     </Compile>
     <Compile Include="KH\KHTimKiem.aspx.cs">
       <DependentUpon>KHTimKiem.aspx</DependentUpon>

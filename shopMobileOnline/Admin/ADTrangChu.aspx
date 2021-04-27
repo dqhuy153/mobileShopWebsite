@@ -8,9 +8,6 @@
             align-items: center;
             padding: 45px 0;
         }
-
-        
-
         .section-thongKe {
             width: 60%;
             display: flex;
@@ -57,11 +54,7 @@
             background: #2f3542;
             padding: 12px 0;
             color: white;
-            //border-radius: 4px;
-           
-
         }
-        
 
         .section-item-number {
             display: flex;
@@ -74,41 +67,7 @@
             font-family:  Arial, sans-serif;
             color: #052f87;
         }
-        /*.adtrangchu-quanLi {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 60%;
-            margin: 0 auto;
-        }
-
-            .adtrangchu-quanLi li {
-                display: block;
-                width: 25%;
-            }
-
-                .adtrangchu-quanLi li a {
-                    display: block;
-                    background: #d3e2f9;
-                    padding: 15px 15px;
-                    border: none;
-                    color: #292929;
-                    font-size: 14px;
-                    font-weight: bold;
-                    border-radius: 5px;
-                    margin: 0 auto;
-                    cursor: pointer;
-                    text-align: center;
-                    font-family: Arial,sans-serif;
-                    box-shadow: rgba(0,0,0,0.15) 0px 2px 4px;
-                }
-
-                    .adtrangchu-quanLi li a:hover {
-                        background: #052f87;
-                        color: white;
-                        transition: all 0.2s ease-in;
-                    }
-            */
+        
         .qldh-container{
             margin: 0 0px;
             max-width: 100%;
@@ -218,18 +177,5 @@
                 </div>
             </div>
         </section>
-        <!--
-        <ul class="adtrangchu-quanLi">
-            <li>
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/QLSanPham.aspx">Quản lí sản phẩm</asp:HyperLink>
-            </li>
-            <li>
-                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/QLTaiKhoanAdmin.aspx">Quản lí tài khoản ADMIN</asp:HyperLink>
-            </li>
-            <li>
-                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Admin/QLTaiKhoanKH.aspx">Quản lí tài khoản KHÁCH HÀNG</asp:HyperLink>
-            </li>
-        </ul>
-        -->
-    </div>
+       
 </asp:Content>

@@ -60,7 +60,7 @@ namespace shopMobileOnline.KH
                             }
                             else if (trangThai == 2)
                             {
-                                table.Append("<td class=\"table-td table-item\"><i class=\"fas fa-check-circle v-icon\"></i></td>");
+                                table.Append("<td class=\"table-td table-item\"><a href=\"DonHangThanhCong.aspx?idDH=" + dr["ID_DONHANG"] + "\"><i class=\"fas fa-check-circle v-icon\"></i><br/> Đánh giá</a></td>");
                             }
                             table.Append("</tr>");
                         }

@@ -67,7 +67,8 @@
             width: 640px;
             display: flex;
             padding-top: 10px;
-            padding-left: 10px
+            padding-left: 10px;
+            justify-content: space-between;
         }
         .ctdh-tr-item a {
             color: #333333;
@@ -88,7 +89,11 @@
             width: 80px;
             margin-right: 10px;
         }
+        .ctdh-left{
+            margin-left: 5px;
+            margin-bottom: 10px;
 
+        }
         .ctdh-btnXoa {
             //position: absolute;
             //top: 97px;
@@ -126,6 +131,7 @@
         .ctdh-right {
             //position: relative;
             margin-bottom: 50px;
+            padding-right: 25px;
         }
 
             .ctdh-right p {
@@ -339,7 +345,7 @@
         }
         .ctdh-btnCho{
             
-        width: 45%;
+            width: 100%;
             height: 70px;
             border-radius: 5px;
             background-color: #656870;
@@ -382,7 +388,7 @@
         }
         .lbDaGiao {
             width: 600px;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             border-radius: 5px;
             background-color: #82b2fa;
@@ -492,9 +498,10 @@
                     </tr>
                     <tr id="trHuy" runat="server">
                         <td colspan="2" class="ctdh-btns">
-                            <asp:Button ID="btnHuy" runat="server" Text="Hủy đơn hàng" OnClick="btnHuy_Click" CssClass="ctdh-btnHuy" />
-                            <asp:Button ID="btnCho" runat="server" Text="Chuyển sang chờ duyệt" OnClick="btnCho_Click" CssClass="ctdh-btnCho" />
-                            <asp:Button ID="btnDuyet" runat="server" Text="Xác nhận giao hàng" OnClick="btnDuyet_Click" CssClass="ctdh-btnXacNhan" />
+                            <asp:Button ID="btnHuy" runat="server" Text="Hủy đơn hàng" OnClick="btnChoSangHuy_Click" CssClass="ctdh-btnHuy" />
+                            <asp:Button ID="btnHuySangCho" runat="server" Text="Chuyển sang chờ duyệt" OnClick="btnHuySangCho_Click" CssClass="ctdh-btnCho" />
+                            <asp:Button ID="btnDuyetSangCho" runat="server" Text="Chuyển sang chờ duyệt" OnClick="btnDuyetSangCho_Click" CssClass="ctdh-btnCho" />                            
+                            <asp:Button ID="btnDuyet" runat="server" Text="Xác nhận giao hàng" OnClick="btnChoSangDuyet_Click" CssClass="ctdh-btnXacNhan" />
                             <asp:Label ID="lbDaGiao" runat="server" Text="Đơn hàng đã giao thành công" CssClass="lbDaGiao"></asp:Label>
                         </td>
                     </tr>

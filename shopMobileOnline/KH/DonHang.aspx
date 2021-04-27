@@ -119,6 +119,7 @@
         }
         .v-icon {
             color: #0094ff;
+            margin-bottom: 4px;
         }
         .dh-notLogin {
             display: flex;
@@ -166,7 +167,7 @@
                     <th class="table-th">Tổng</th>
                     <th class="table-th" style="min-width: 110px">Trạng thái</th>
                     <th class="table-th"  style="min-width: 80px">Xem chi tiết</th>
-                    <th class="table-th">Huỷ</th>
+                    <th class="table-th" style="min-width: 100px">Ghi chú</th>
                 </tr>
                 <asp:Panel ID="Panel1" runat="server"></asp:Panel>
             </table>

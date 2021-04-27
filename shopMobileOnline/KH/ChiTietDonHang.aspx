@@ -15,42 +15,30 @@
         }
 
         .head-text {
-            //position: absolute;
             width: 630px;
-            //padding-left: 400px;
             padding-top: 20px;
             display: flex;
             justify-content: space-between;
         }
 
         .text {
-            //position: relative;
             width: 100%;
             display: flex;
             justify-content: space-between;
         }
 
         .back {
-            //position: absolute;
             margin-right: 50px;
         }
 
-        .text p {
-            //position: absolute;
-            //padding-left: 520px;
-        }
-
+       
         .cart {
-            //position: absolute;
             width: 650px;
             box-shadow: 0 0 18px rgb(0 0 0 / 12%);
             margin-top: 30px;
-            //margin-left: 400px;
-            //height: 800px;
         }
 
         .table {
-            //position: relative;
             width: 620px;
             height: 800px;
         }
@@ -61,7 +49,6 @@
 
         .left, .left1 {
             height: auto;
-            //position: relative;
             width: 500px;
             
         }
@@ -70,15 +57,12 @@
             padding-top: 10px;
         }
         .img-sp {
-            //position: absolute;
             width: 80px;
             margin-right: 10px;
         }
 
         .btnXoa {
-            //position: absolute;
-            //top: 97px;
-            //left: 41px;
+           
             border: none;
             cursor: pointer;
             background: none;
@@ -92,23 +76,14 @@
                 font-size: 15px;
             }
 
-        .left h5 {
-            //position: absolute;
-            //margin-left: 85px;
-            //margin-top: 10px;
 
-        }
 
         .left p {
-            //position: absolute;
-            //margin-left: 85px;
-            //margin-top: 35px;
+            
             font-size: 13px;
         }
 
-        .right {
-            //position: relative;
-        }
+        
 
             .right p {
                 color: #e77f67;
@@ -249,7 +224,8 @@
         }
         .lbDaGiao {
             width: 600px;
-            height: 70px;
+            padding: 20px;
+            text-align: center;
             border-radius: 5px;
             background-color: #82b2fa;
             font-weight: bold;
@@ -280,10 +256,7 @@
                 border: 1px solid #808080;
             }
 
-            .ttkh-table input {
-                //height: 30px;
-            }
-
+           
             .ttkh-table textarea {
                 height: 80px;
                 overflow-y: scroll;
@@ -336,7 +309,7 @@
     <div class="Giohang">
             <div class="head-text">
                 <div class="text">
-                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="back" NavigateUrl="~/KH/DonHang.aspx"><i class="fas fa-chevron-left"></i>Trở lại trang đơn hàng</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="back" NavigateUrl="~/KH/DonHang.aspx"><i class="fas fa-chevron-left"></i> Trở lại trang đơn hàng</asp:HyperLink>
                     <p>Thông tin đơn hàng</p>
                 </div>
             </div>

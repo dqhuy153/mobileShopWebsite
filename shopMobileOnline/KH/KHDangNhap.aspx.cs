@@ -68,7 +68,19 @@ namespace shopMobileOnline.KH
                 }
 
                 Session["userKH"] = txtTenDangNhap.Text;
-                Response.Redirect("KHTrangChu.aspx");
+                if(Request.QueryString.Get("t")!= null && Request.QueryString.Get("t") == "GH")
+                {
+                    Response.Redirect("GioHang.aspx");
+                }
+                if(Request.QueryString.Get("idSP") != null)
+                {
+                    Response.Redirect("TrangChiTietSP.aspx?idSP=" + Request.QueryString.Get("idSP"));
+                }
+                else
+                {
+                    Response.Redirect("KHTrangChu.aspx");
+
+                }
                 Session.RemoveAll();
             }
             else
